@@ -1,0 +1,170 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% This is the template for writing Thesis in LaTeX for the Graduate Students of King Fahd University of
+%% Petroleum & Minerals, Dhahran, K.S.A.
+%%
+%% All the Comments are written with the line starting with '%%'. They should not be removed.
+%%
+%% Please make sure to have the class file named: 'kfupm_thesis.cls'. PLEASE DO NOT ALTER IT!
+%%
+%% Carefully read the comments in the following documnent and add/edit only where mentioned.
+%%
+%% In order to enable a line remove the preceeding '%' sign and to disable a line insert '%' at the start.
+%%
+%% Please make sure that you have the compatible versions of MikTex installed prioir to using this
+%% template.
+%%
+%% Go through the Thesis Writing manual and the Latex guidelines document available at the DGS website.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Always ensure that only one \documentclass{} line is enabled at one time
+
+%% For MS Thesis enable the next line
+
+\documentclass[ms,twoside, 12pt]{kfupm_thesis}
+
+%For green card title page enable the following line
+%\documentclass[printready,ms,twoside, 12pt]{kfupm_thesis}
+
+%% For PhD Thesis enable the next line
+
+%\documentclass[phd,twoside, 12pt]{class_bst/kfupm_thesis}
+%\documentclass[phd,twoside, 12pt]{kfupm_thesis}
+%For green card title page enable the following line
+%\documentclass[printready,phd,twoside, 12pt]{kfupm_thesis}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The following file defines margins and text width
+
+\input{1_first/1_def}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following file defines the inclusion of packages and some other required commands
+
+\input{1_first/2_setting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following file defines the settings for including List of Abbreviations
+
+\input{1_first/7_set_loa}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following file defines the list of abbreviations
+
+\input{1_first/8_loa}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setotherlanguage{arabic} %
+\newfontfamily\arabicfont[Script=Arabic]{Scheherazade} 
+%We have to define an Arabic font
+\let\maketitle\keptmaketitle %
+
+%---------------------------------------------------
+%added to overcome the text strecting from top to bottom when using openright
+\raggedbottom%
+%--------------------------------------------------------
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following file defines the title, author, advisers etc.
+
+\input{1_first/3_title}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following file defines the copyright
+
+\input{1_first/4_copyright}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following file defines the dedication page
+
+\input{1_first/5_dedication}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following file defines the acknowledgments
+
+\input{1_first/6_ack}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{preamble}
+
+%Printing list of symbols and abbreviations
+%setting the width of the labels the same as 2.5cm as required by DGS template
+\setlist[description]{leftmargin=!, labelwidth=2.5cm, font=\normalfont} %
+{
+\setstretch{1.5}%
+%
+\newpage
+\phantomsection
+\printglossary[title=LIST OF SYMBOLS, toctitle=LIST OF SYMBOLS, nogroupskip] %
+%
+\newpage%
+\phantomsection
+\printglossary[title=LIST OF ABBREVIATIONS, toctitle=LIST OF ABBREVIATIONS,type=\acronymtype,nogroupskip] %
+\setstretch{2}%
+}
+\setlist[description]{style=standard} %
+%
+% The following file defines the Thesis abstract
+\input{1_first/1_def}
+
+\end{preamble}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following file defines the contents of Chapter One of the Thesis
+\newpage
+\setstretch{2}
+\chapter{introduction}
+\label{ch1}
+    \section{Overview and Motivation}
+    \label{sec1.1}
+    \input{2_chaps/ch1/sec1.1}
+
+    \section{Problem Statement}
+    \label{sec1.2}
+    \input{2_chaps/ch1/sec1.2}
+    
+    \section{Dissertation Organization}
+    \label{sec1.3}
+    \input{2_chaps/ch1/sec1.3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following file defines the contents of Chapter Two of the Thesis
+\newpage
+\chapter{title}
+\label{ch2}
+    \section{Section Title}
+    \label{sec2.1}
+    \input{2_chaps/ch2/sec2.1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following file defines the appendices if needed
+
+\input{3_last/1_apndx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following file defines the inclusion of the References used in the Thesis
+
+\input{3_last/2_ref}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following file defines the CV of the student
+
+\input{3_last/4_cv}
+
+\newpage
+\input{guideline/loa}
+\newpage
+\input{guideline/figure}
+\newpage
+\input{guideline/math_cite}
+\newpage
+\input{guideline/table}
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
